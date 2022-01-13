@@ -1,14 +1,9 @@
 import styled from "styled-components";
 
-export const UserList = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const List = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 1rem;
   width: 500px;
   height: calc(100vh - 270px);
   margin-block-start: 30px;
@@ -18,7 +13,12 @@ export const List = styled.div`
 export const User = styled.div`
   display: flex;
   justify-content: center;
+  padding: 0.5rem;
   gap: 16px;
+  border-radius: 20px;
+  &:hover {
+    background-color: #ffffff08;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -43,14 +43,7 @@ export const SpinnerWrapper = styled.div`
 export const IconButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.2s ease-in-out;
-`;
-
-export const Filters = styled.div`
-  display: flex;
-  justify-content: center;
-  & > * {
-    margin-inline-end: 8px;
-  }
 `;

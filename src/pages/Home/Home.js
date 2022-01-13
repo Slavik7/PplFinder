@@ -1,23 +1,24 @@
-import React from "react";
-import Text from "components/Text";
+import React, { useState } from "react";
+
 import UserList from "components/UserList";
-import { usePeopleFetch } from "hooks";
-import * as S from "./style";
+import * as S from "../style";
+import Filters from "components/Filters";
+import Header from "components/Header";
+import UserDetails from "components/UserDetails";
 
 const Home = () => {
-  const { users, isLoading } = usePeopleFetch();
-
+  const [userDetails, setUserDetails] = useState({});
   return (
-    <S.Home>
+    <S.Page>
+      {userDetails.active && (
+        <UserDetails user={userDetails} setUserDetails={setUserDetails} />
+      )}
       <S.Content>
-        <S.Header>
-          <Text size="64px" bold>
-            PplFinder
-          </Text>
-        </S.Header>
-        <UserList users={users} isLoading={isLoading} />
+        <Header title={"PplFinder"} />
+        <Filters />
+        <UserList setUserDetails={setUserDetails} />
       </S.Content>
-    </S.Home>
+    </S.Page>
   );
 };
 

@@ -7,8 +7,9 @@ const Button = ({
   color = C.COLORS.default,
   disabled,
   size = C.SIZE.medium,
-  variant = C.VARIANT.standard,
+  variant = C.VARIANT.containd,
   onClick,
+  fontSize,
 }) => {
   return (
     <MuiButton
@@ -17,6 +18,7 @@ const Button = ({
       disabled={disabled}
       size={size}
       variant={variant}
+      style={{ fontSize: fontSize }}
     >
       {label}
     </MuiButton>
