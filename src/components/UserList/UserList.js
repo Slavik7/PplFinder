@@ -15,7 +15,6 @@ import {
 } from "store/actions";
 import Button from "components/Button";
 import * as storage from "util/storage";
-import { Search } from "components/Search/style";
 
 const UserList = ({ setUserDetails, isFavorites = false, searchText = "" }) => {
   const { state, dispatch } = useContext(Context);
